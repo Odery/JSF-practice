@@ -3,7 +3,7 @@
         PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"
-      xmlns:h="http://java.sun.com/jsf/html">
+      xmlns:h="http://java.sun.com/jsf/html" xmlns:c="http://java.sun.com/jsf/core">
 <h:head>
    <title>Hello User</title>
 </h:head>
@@ -12,6 +12,11 @@
       First Name: <h:inputText value="#{student.firstName}"/>
       <br/><br/>
       Last Name:  <h:inputText value="#{student.lastName}"/>
+      <br/><br/>
+      Country:
+      <h:selectOneMenu value="#{student.country}">
+         <c:selectItems value="#{student.countries}"/>
+      </h:selectOneMenu>
       <br/><br/>
       <h:commandButton value = "Submit" action="confirm"/>
    </h:form>
