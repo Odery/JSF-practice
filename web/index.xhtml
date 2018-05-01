@@ -22,8 +22,14 @@
       <br/><br/>
 
       Favorite language:
-      <h:selectOneRadio value="#{student.language}">
+      <h:selectManyCheckbox value="#{student.languages}">
          <c:selectItems value="#{data.languages}"/>
+      </h:selectManyCheckbox>
+      <br/>
+
+      Gender:
+      <h:selectOneRadio value="#{student.gender}">
+         <c:selectItems value="#{data.genders}"/>
       </h:selectOneRadio>
       <br/><br/>
 

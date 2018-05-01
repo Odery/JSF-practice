@@ -3,15 +3,20 @@
         PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"
-      xmlns:h="http://java.sun.com/jsf/html">
+      xmlns:h="http://java.sun.com/jsf/html" xmlns:ui="http://java.sun.com/jsf/facelets">
 <h:head>
     <title>Confirm!</title>
 </h:head>
 <h:body>
     Student is confirmed: #{student.credits()}
     <br/>
-    Country is: #{student.country}
+    Country is: #{student.country}, gender: #{student.gender}
     <br/>
-    Favorite language is: #{student.language}
+    Favorite languages is:
+    <ul>
+        <ui:repeat value="#{student.languages}" var="tempLang">
+            <li>#{tempLang}</li>
+        </ui:repeat>
+    </ul>
 </h:body>
 </html>

@@ -8,10 +8,18 @@ import java.util.List;
 public class DataBean {
     private List<String> countries;
     private List<String> languages;
+    private List<String> genders;
 
     public DataBean(){
         setCountries();
         setLanguages();
+        setGenders();
+    }
+
+    private void setGenders() {
+        genders = new ArrayList<>();
+        genders.add("Male");
+        genders.add("Female");
     }
 
     private void setCountries(){
@@ -38,5 +46,9 @@ public class DataBean {
 
     public List<String> getCountries() {
         return countries;
+    }
+
+    public List<String> getGenders() {
+        return genders;
     }
 }

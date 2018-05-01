@@ -1,17 +1,21 @@
 package beans;
 
 import javax.faces.bean.ManagedBean;
-import java.util.ArrayList;
-import java.util.List;
 
 @ManagedBean(name = "student")
 public class StudentBean {
     private String firstName;
     private String lastName;
     private String country;
-    private String language;
+    private String[] languages;
+    private String gender;
 
     public StudentBean() {
+        firstName = "You Name Here!";
+        lastName = "You Last Name Here!";
+        country = "US";
+        gender = "Male";
+        languages = new String[]{"Java"};
     }
 
     public String getFirstName() {
@@ -38,12 +42,20 @@ public class StudentBean {
         this.country = country;
     }
 
-    public String getLanguage() {
-        return language;
+    public String[] getLanguages() {
+        return languages;
     }
 
-    public void setLanguage(String language) {
-        this.language = language;
+    public void setLanguages(String[] languages) {
+        this.languages = languages;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public String getGender() {
+        return gender;
     }
 
     public String credits(){

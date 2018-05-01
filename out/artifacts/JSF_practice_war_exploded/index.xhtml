@@ -9,21 +9,32 @@
 </h:head>
 <h:body>
    <h:form>
+
       First Name: <h:inputText value="#{student.firstName}"/>
       <br/><br/>
       Last Name:  <h:inputText value="#{student.lastName}"/>
       <br/><br/>
+
       Country:
       <h:selectOneMenu value="#{student.country}">
          <c:selectItems value="#{data.countries}"/>
       </h:selectOneMenu>
       <br/><br/>
+
       Favorite language:
-      <h:selectOneRadio value="#{student.language}">
+      <h:selectManyCheckbox value="#{student.languages}">
          <c:selectItems value="#{data.languages}"/>
+      </h:selectManyCheckbox>
+      <br/>
+
+      Gender:
+      <h:selectOneRadio value="#{student.gender}">
+         <c:selectItems value="#{data.genders}"/>
       </h:selectOneRadio>
       <br/><br/>
+
       <h:commandButton value = "Submit" action="confirm"/>
+
    </h:form>
 </h:body>
 </html>
