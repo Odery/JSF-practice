@@ -9,15 +9,9 @@ public class StudentBean {
     private String firstName;
     private String lastName;
     private String country;
-    private List<String> countries;
+    private String language;
 
     public StudentBean() {
-        countries = new ArrayList<>();
-        countries.add("Ukraine");
-        countries.add("US");
-        countries.add("Canada");
-        countries.add("Brazil");
-        countries.add("UK");
     }
 
     public String getFirstName() {
@@ -44,8 +38,12 @@ public class StudentBean {
         this.country = country;
     }
 
-    public List<String> getCountries() {
-        return countries;
+    public String getLanguage() {
+        return language;
+    }
+
+    public void setLanguage(String language) {
+        this.language = language;
     }
 
     public String credits(){

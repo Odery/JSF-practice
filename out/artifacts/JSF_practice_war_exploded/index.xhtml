@@ -15,8 +15,13 @@
       <br/><br/>
       Country:
       <h:selectOneMenu value="#{student.country}">
-         <c:selectItems value="#{student.countries}"/>
+         <c:selectItems value="#{data.countries}"/>
       </h:selectOneMenu>
+      <br/><br/>
+      Favorite language:
+      <h:selectOneRadio value="#{student.language}">
+         <c:selectItems value="#{data.languages}"/>
+      </h:selectOneRadio>
       <br/><br/>
       <h:commandButton value = "Submit" action="confirm"/>
    </h:form>
