@@ -1,6 +1,10 @@
 package beans;
 
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
+import javax.faces.component.UIComponent;
+import javax.faces.context.FacesContext;
+import javax.faces.validator.ValidatorException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -50,5 +54,16 @@ public class DataBean {
 
     public List<String> getGenders() {
         return genders;
+    }
+
+    public void checkCode(FacesContext context, UIComponent component, Object object) throws ValidatorException {
+        if (object == null){
+            return;
+        }
+
+        if (!((String)object).startsWith("S2eve")){
+            FacesMessage message = new FacesMessage("Code must start with 'S2eve'!");
+            throw new ValidatorException(message);
+        }
     }
 }

@@ -2,7 +2,7 @@
 <!DOCTYPE html
         PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"
+<html xml:lang="en" lang="en"
       xmlns:h="http://java.sun.com/jsf/html" xmlns:c="http://java.sun.com/jsf/core">
 <h:head>
    <title>Hello User</title>
@@ -27,14 +27,26 @@
       <h:message for="age" styleClass="err"/>
       <br/><br/>
 
-      Postal code:  <h:inputText value="#{student.postalCode}" label="Postal code" required="true" id = "postal">
-      <c:validateLength minimum="5" maximum="5"/>
+      Postal code:  <h:inputText value="#{student.postalCode}" label="Postal code" required="true" requiredMessage="   Postal code is required!" validatorMessage="    Wrong format!" id = "postal">
+      <c:validateRegex pattern="\d{5}"/>
    </h:inputText>
       <h:message for="postal" styleClass="err"/>
       <br/><br/>
 
-      Email:  <h:inputText value="#{student.email}" label="Email" required="true" requiredMessage="   Email is required!" id = "email"/>
+      Email:  <h:inputText value="#{student.email}" label="Email" required="true" requiredMessage="   Email is required!" validatorMessage="   Wrong email!" id = "email">
+      <c:validateRegex pattern="\w+@\w+[.][a-z]{2,3}$"/>
+   </h:inputText>
       <h:message for="email" styleClass="err"/>
+      <br/><br/>
+
+      Phone:  <h:inputText value="#{student.phone}" label="Phone" required="false" validatorMessage="   Wrong number!" id = "phone">
+      <c:validateRegex pattern="\d{10}"/>
+   </h:inputText>
+      <h:message for="phone" styleClass="err"/>
+      <br/><br/>
+
+      Invite code:  <h:inputText value="#{student.code}" label="Code" required="true" requiredMessage="   Code is required!" id = "code" validator="#{data.checkCode}"/>
+      <h:message for="code" styleClass="err"/>
       <br/><br/>
 
       Country:

@@ -8,8 +8,10 @@ public class StudentBean {
     private String lastName;
     private String country;
     private String email;
+    private String phone;
+    private String code;
     private byte age;
-    private short postalCode;
+    private String postalCode;
     private String[] languages;
     private String gender;
 
@@ -17,6 +19,22 @@ public class StudentBean {
         country = "US";
         gender = "Male";
         languages = new String[]{"Java"};
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
     public byte getAge() {
@@ -27,11 +45,11 @@ public class StudentBean {
         this.age = age;
     }
 
-    public short getPostalCode() {
+    public String getPostalCode() {
         return postalCode;
     }
 
-    public void setPostalCode(short postalCode) {
+    public void setPostalCode(String postalCode) {
         this.postalCode = postalCode;
     }
 
