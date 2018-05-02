@@ -7,15 +7,40 @@ public class StudentBean {
     private String firstName;
     private String lastName;
     private String country;
+    private String email;
+    private byte age;
+    private short postalCode;
     private String[] languages;
     private String gender;
 
     public StudentBean() {
-        firstName = "You Name Here!";
-        lastName = "You Last Name Here!";
         country = "US";
         gender = "Male";
         languages = new String[]{"Java"};
+    }
+
+    public byte getAge() {
+        return age;
+    }
+
+    public void setAge(byte age) {
+        this.age = age;
+    }
+
+    public short getPostalCode() {
+        return postalCode;
+    }
+
+    public void setPostalCode(short postalCode) {
+        this.postalCode = postalCode;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getFirstName() {

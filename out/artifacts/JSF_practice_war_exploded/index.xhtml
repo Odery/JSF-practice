@@ -6,13 +6,35 @@
       xmlns:h="http://java.sun.com/jsf/html" xmlns:c="http://java.sun.com/jsf/core">
 <h:head>
    <title>Hello User</title>
+
+   <style type="text/css">
+      .err{color:red}
+   </style>
 </h:head>
 <h:body>
    <h:form>
 
-      First Name: <h:inputText value="#{student.firstName}"/>
+      First Name: <h:inputText value="#{student.firstName}" label="First name" required="true" requiredMessage="  First name is required!" id = "firstName"/>
+      <h:message for="firstName" styleClass="err"/>
       <br/><br/>
-      Last Name:  <h:inputText value="#{student.lastName}"/>
+
+      Last Name:  <h:inputText value="#{student.lastName}" label="Last name" required="true" requiredMessage=" Last name is required!" id = "lastName"/>
+      <h:message for="lastName" styleClass="err"/>
+      <br/><br/>
+
+      Age:  <h:inputText value="#{student.age}" label="Age" required="true" id = "age">
+      <c:validateLongRange minimum="18" maximum="100"/></h:inputText>
+      <h:message for="age" styleClass="err"/>
+      <br/><br/>
+
+      Postal code:  <h:inputText value="#{student.postalCode}" label="Postal code" required="true" id = "postal">
+      <c:validateLength minimum="5" maximum="5"/>
+   </h:inputText>
+      <h:message for="postal" styleClass="err"/>
+      <br/><br/>
+
+      Email:  <h:inputText value="#{student.email}" label="Email" required="true" requiredMessage="   Email is required!" id = "email"/>
+      <h:message for="email" styleClass="err"/>
       <br/><br/>
 
       Country:

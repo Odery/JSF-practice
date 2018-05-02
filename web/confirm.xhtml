@@ -10,8 +10,22 @@
 <h:body>
     Student is confirmed: #{student.credits()}
     <br/>
-    Country is: #{student.country}, gender: #{student.gender}
+
+    email: #{student.email}
     <br/>
+
+    Age: #{student.age}
+    <br/>
+
+    Postal code: #{student.postalCode}
+    <br/>
+
+    Country is: #{student.country}
+    <br/>
+
+    gender: #{student.gender}
+    <br/>
+
     Favorite languages is:
     <ul>
         <ui:repeat value="#{student.languages}" var="tempLang">
