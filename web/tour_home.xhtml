@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core" xml:lang="en" lang="en">
+<h:head>
+    <title>Tour home</title>
+</h:head>
+<h:body>
+    <h2>Select tour you want!</h2>
+    <br/><br/>
+
+    <h:form>
+        Select a tour:
+        <h:selectOneMenu value="#{tour.tour}">
+            <f:selectItem itemValue="city" itemLabel="City tour"/>
+            <f:selectItem itemValue="country" itemLabel="Country tour"/>
+        </h:selectOneMenu>
+        <h:commandButton value="Sublit" action="#{tour.chosenTour()}"/>
+    </h:form>
+</h:body>
+</html>

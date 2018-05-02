@@ -1,8 +1,10 @@
 package beans;
 
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.RequestScoped;
 
 @ManagedBean(name = "student")
+@RequestScoped
 public class StudentBean {
     private String firstName;
     private String lastName;

@@ -1,6 +1,7 @@
 package beans;
 
 import javax.faces.application.FacesMessage;
+import javax.faces.bean.ApplicationScoped;
 import javax.faces.bean.ManagedBean;
 import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
@@ -9,6 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @ManagedBean(name = "data")
+@ApplicationScoped
 public class DataBean {
     private List<String> countries;
     private List<String> languages;
