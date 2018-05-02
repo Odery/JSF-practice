@@ -1,10 +1,8 @@
 package beans;
 
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.RequestScoped;
 
 @ManagedBean(name = "student")
-@RequestScoped
 public class StudentBean {
     private String firstName;
     private String lastName;
@@ -21,6 +19,12 @@ public class StudentBean {
         country = "US";
         gender = "Male";
         languages = new String[]{"Java"};
+    }
+
+    StudentBean(String firstName, String lastName, String email) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
     }
 
     public String getCode() {
@@ -104,6 +108,6 @@ public class StudentBean {
     }
 
     public String credits(){
-        return firstName + " " + lastName;
+        return firstName + " " + lastName + " " + email;
     }
 }

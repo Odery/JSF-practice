@@ -15,11 +15,21 @@ public class DataBean {
     private List<String> countries;
     private List<String> languages;
     private List<String> genders;
+    private List<StudentBean> students;
 
     public DataBean(){
         setCountries();
         setLanguages();
         setGenders();
+        setStudents();
+    }
+
+    private void setStudents() {
+        students = new ArrayList<>();
+        students.add(new StudentBean("Steve", "Rock", "kan@lan.ua"));
+        students.add(new StudentBean("John", "Doe", "John@doe.us"));
+        students.add(new StudentBean("Jack", "Reaper", "reaper@london.gb"));
+        students.add(new StudentBean("Hue", "Jakson", "hue@gmail.com"));
     }
 
     private void setGenders() {
@@ -56,6 +66,10 @@ public class DataBean {
 
     public List<String> getGenders() {
         return genders;
+    }
+
+    public List<StudentBean> getStudents() {
+        return students;
     }
 
     public void checkCode(FacesContext context, UIComponent component, Object object) throws ValidatorException {
